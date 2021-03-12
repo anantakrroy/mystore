@@ -1,0 +1,45 @@
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a{ 
+    text-decoration: none;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: crimson;
+}
+
+h4 {
+    color: darkcyan;
+}
+
+.product-info {
+    padding: 10px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+select {
+    width: 5rem;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+button {
+    color: white;
+    background-color: rgba(8, 123, 255);
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+}
+
+.product-img {
+    padding: 10px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(117, 19, 202, 0.7);
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+ul {
+    width: 90%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    font-weight: 700;
+    color: white;
+}
+
+a:hover {
+    color: purple;
+    background-color: white;
+    padding: 0 3px;
+}

@@ -1,0 +1,16 @@
+.products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 7px;
+    box-shadow: -2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}

@@ -1,7 +1,11 @@
 .navbar {
     display: flex;
     justify-content: space-around;
-    background-color: rgba(117, 19, 202, 0.7);
+    background-color: rgba(117, 19, 202, 0.95);
+    position: fixed;
+    top: 0%;
+    z-index: 10;
+    width: 100%;
 }
 
 a {
@@ -16,6 +20,8 @@ ul {
     list-style: none;
     display: flex;
     justify-content: space-around;
+    margin: 0 !important;
+    padding: 10px;
 }
 
 li {

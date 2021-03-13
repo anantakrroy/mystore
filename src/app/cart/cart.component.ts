@@ -12,9 +12,9 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onChange(val:Event<HTMLInputElement>) {
-    console.log('New value >> ', val.target);
-    this.value = val.target.value;
-  }
+  // onChange(val:Event) {
+  //   console.log('New value >> ', val.target);
+  //   // this.value = val.target.value;
+  // }
 
 }

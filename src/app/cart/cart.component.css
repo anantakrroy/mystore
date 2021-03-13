@@ -1,0 +1,5 @@
+.cart {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    margin: 8rem 10px;
+}

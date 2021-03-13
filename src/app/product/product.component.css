@@ -4,7 +4,7 @@
     align-items: center;
 }
 
-a{ 
+a {
     text-decoration: none;
     cursor: pointer;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -15,11 +15,17 @@ h4 {
     color: darkcyan;
 }
 
+.product-img {
+    max-width: 100px;
+    max-height: 180px;
+}
+
 .product-info {
     padding: 10px 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
 }
 
 select {
@@ -37,9 +43,10 @@ button {
     border: none;
 }
 
-.product-img {
-    padding: 10px 10%;
+.img-wrapper {
     display: flex;
+    height: 10rem;
     flex-direction: column;
     align-items: center;
+    margin: 1.8rem;
 }

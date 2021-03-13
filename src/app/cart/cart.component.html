@@ -1,16 +1,64 @@
-<div class="cart">
-    <div class="cart-item" *ngFor="let item of cartItems">
-        <div class="prod-img">
-            <img src="{{item.image}}" alt="{{item.title}} image">
-        </div>
-        <div class="prod-card">
-            <p id="title">{{item.title}}</p>
-            <p id="price">$ {{item.price}}</p>
-            <input type="number" value={{item.qty}} (change)="cartItem.emit(item)" />
+<div class="cart-page">
+    <div class="cart">
+        <div class="cart-item" *ngFor="let item of cartItems">
+            <div class="prod-img" *ngIf="item.qty > 0">
+                <img src="{{item.image}}" alt="{{item.title}} image">
+            </div>
+            <div class="prod-card" *ngIf="item.qty > 0">
+                <p id="{{item.title}}">{{item.title}}</p>
+                <p id="price">$ {{item.price}}</p>
+                <input class="qty" type="number" value={{item.qty}} (change)="updateAmount($event)" />
+            </div>
         </div>
     </div>
     <div class="prod-total">
         <p>Total Amount : </p>
-        <p>$ {{calculateAmount()}}</p>
+        <input #amount id="bill" type="text" value="$ {{calculateAmount()}}" readonly />
+        <!-- <p>$ {{calculateAmount()}}</p> -->
+    </div>
+    <div class="bag-empty" *ngIf="calculateAmount() === 0">
+        <!-- {{amount.value}}; -->
+        <h4>Empty Shopping Cart!</h4>
+        <em>Add items to enable delivery!</em>
+    </div>
+    <div class="customer-form" *ngIf="calculateAmount() !== 0">
+        <form #form="ngForm"  (ngSubmit)="onSubmit()">
+            <h5>Customer Details</h5>
+            <input [(ngModel)]="custName" #name="ngModel" type="text" placeholder="Name (minimum 3 chars)"
+                name="custName" minlength="3" required>
+            <input [(ngModel)]="custAddr" #address="ngModel" type="text" placeholder="Address (minimum 8 chars)"
+                name="custAddr" minlength="8" required>
+            <input [(ngModel)]="custCC" #creditcard="ngModel" type="number"
+                placeholder="Credit Card (minimum 8 characters)" name="custCC" pattern="[0-9]{16}" required>
+            <input class="submit" [disabled]="form.invalid" type="submit" value="Submit" />
+        </form>
+        <!-- Error handling -->
+        <!-- Name field -->
+        <div class="err-name" *ngIf="name.invalid && name.dirty">
+            <div *ngIf="name.errors?.required">
+                Please enter your name !
+            </div>
+            <div *ngIf="name.errors?.minlength">
+                Name should contain atleast 3 letters !
+            </div>
+        </div>
+        <!-- Address field -->
+        <div class="err-addr" *ngIf="address.invalid && address.dirty">
+            <div *ngIf="address.errors?.required">
+                Please enter address !
+            </div>
+            <div *ngIf="address.errors?.minlength">
+                Address should be 8 characters long !
+            </div>
+        </div>
+        <!-- Credit card field -->
+        <div class="err-cc" *ngIf="creditcard.invalid && creditcard.dirty">
+            <div *ngIf="creditcard.errors?.required">
+                Credit card required!
+            </div>
+            <div *ngIf="creditcard.errors?.pattern">
+                Enter 16-digit credit card !
+            </div>
+        </div>
     </div>
 </div>

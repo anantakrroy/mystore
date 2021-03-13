@@ -14,9 +14,7 @@ export class CartService {
       this.cartItems.push(item);
     else {
       let idx = this.cartItems.findIndex(e => e.title === item.title);
-      console.log('Item qty > ', item.qty);
       this.cartItems[idx].qty = this.cartItems[idx].qty + item.qty;
-      console.log('Index >> ', idx, this.cartItems[idx]);
     }
   }
 

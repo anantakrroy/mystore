@@ -5,9 +5,9 @@
     <div class="product-info">
         <h3><a routerLink="/product-detail/{{product.id}}">{{product.title}}</a></h3>
         <h4>$ {{product.price}}</h4>
-        <select>
+        <select (change)="onChange($event)">
             <option *ngFor="let q of qty" value="{{q}}">{{q}}</option>
         </select>
-        <button type="button" name="prod-btn" id="prod-btn" class="btn btn-primary">Add to Cart</button>
+        <button type="button" name="prod-btn" id="prod-btn" class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
     </div>
 </div>

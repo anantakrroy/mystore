@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { CartItem } from '../../models/CartItem';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -6,15 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  @Input() value:string = '0';
-  constructor() { }
+  cartItems: CartItem[] = [];
+  amount: number = 0;
+  @Output() cartItem = new EventEmitter();
+
+  constructor(private _cartservice: CartService) { }
 
   ngOnInit(): void {
+    this.cartItems = this._cartservice.getItems();
   }
 
-  // onChange(val:Event) {
-  //   console.log('New value >> ', val.target);
-  //   // this.value = val.target.value;
-  // }
-
+  calculateAmount(): number {
+    return this.cartItems.reduce((a, c) => a + c.price * c.qty, this.amount);
+  }
 }

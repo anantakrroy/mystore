@@ -1,3 +1,16 @@
 <div class="cart">
-    <input type="number" name="qty" id="prod" [value]=value>
+    <div class="cart-item" *ngFor="let item of cartItems">
+        <div class="prod-img">
+            <img src="{{item.image}}" alt="{{item.title}} image">
+        </div>
+        <div class="prod-card">
+            <p id="title">{{item.title}}</p>
+            <p id="price">$ {{item.price}}</p>
+            <input type="number" value={{item.qty}} (change)="cartItem.emit(item)" />
+        </div>
+    </div>
+    <div class="prod-total">
+        <p>Total Amount : </p>
+        <p>$ {{calculateAmount()}}</p>
+    </div>
 </div>

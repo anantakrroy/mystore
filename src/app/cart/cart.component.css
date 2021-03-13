@@ -1,5 +1,41 @@
 .cart {
+    margin: 5% 0;
+}
+
+.cart-item {
     display: grid;
-    grid-template-columns: 10% 80% 10%;
+    grid-template-columns: 10% 10% 55% 10%;
     margin: 8rem 10px;
+}
+
+.prod-total {
+    margin-left: 20%;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+#title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#price {
+    font-size: 0.9rem;
+}
+
+img {
+    width: 80px;
+    height: 150px;
+    border: none;
+    border-radius: 8px;
+}
+
+.prod-img {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.prod-card {
+    max-height: 250px;
 }

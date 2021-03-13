@@ -22,6 +22,10 @@ export class CartService {
     return this.cartItems;
   }
 
+  getBill() {
+    return this.cartItems.reduce((a,c) => a + c.price * c.qty,0);
+  }
+
   updateCart(item: CartItem) {
     if (item.qty === 0) {
       this.cartItems = this.cartItems.filter(e => e.title !== item.title)

@@ -1,0 +1,14 @@
+.success {
+    display: flex;
+    flex-direction: column;
+    margin: 9% 40%;
+    align-items:center;
+}
+
+.success > * {
+    padding: 15px 0 ;    
+}
+
+p {
+    font-size: 1.3rem;
+}

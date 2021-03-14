@@ -30,13 +30,8 @@ export class CartComponent implements OnInit {
     let elem = (<HTMLParagraphElement>event.target).parentNode?.childNodes[0].textContent;
     let newQty = +(<HTMLInputElement>event.target).value;
     item.qty = newQty;
-    console.log('Updated Item >> ', item);
-    console.log('event >> ', elem,newQty);
-    // this.cartItems.map(e => {
-    //   if(e.title === elem) {
-    //     e.qty = newQty;
-    //   }
-    // })
+    // console.log('Updated Item >> ', item);
+    // console.log('event >> ', elem,newQty);
     this._cartservice.updateCart(item);
     this.calculateAmount();
   }

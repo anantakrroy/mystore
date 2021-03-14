@@ -1,5 +1,9 @@
 <!-- <p>products works!</p> -->
 <div class="wrapper">
+    <div class="loading-alert" *ngIf="products.length === 0">
+        <h1 >Please wait...Loading products</h1>
+    </div>
+
     <div class="products" *ngFor="let product of products">
         <app-product class="product-card" [product]="product"></app-product>
     </div>

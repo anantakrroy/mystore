@@ -28,6 +28,15 @@ h4 {
     margin: 0 auto;
 }
 
+.title {
+    font-weight: 700;
+    font-size: 1.1rem !important;
+}
+
+.price {
+    font-size: 1.1rem;
+}
+
 select {
     width: 5rem;
     padding: 5px;

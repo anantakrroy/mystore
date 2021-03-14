@@ -28,8 +28,8 @@
                 name="custName" minlength="3" required>
             <input [(ngModel)]="custAddr" #address="ngModel" type="text" placeholder="Address (minimum 8 chars)"
                 name="custAddr" minlength="8" required>
-            <input [(ngModel)]="custCC" #creditcard="ngModel" type="number"
-                placeholder="Credit Card (minimum 8 characters)" name="custCC" pattern="[0-9]{16}" required>
+            <input [(ngModel)]="custCC" #creditcard="ngModel" type="text"
+                placeholder="Credit Card (16 digit number)" name="custCC" pattern="[0-9]{16}" required>
             <input class="submit" [disabled]="form.invalid" type="submit" value="Submit" />
         </form>
         <!-- Error handling -->

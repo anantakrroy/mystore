@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { Product } from 'src/models/Product';
 import { CartItem } from '../../models/CartItem';
 import { CartService } from '../../services/cart.service';
 
@@ -25,15 +26,18 @@ export class CartComponent implements OnInit {
     return +(this.cartItems.reduce((a, c) => a + c.price * c.qty, this.amount).toFixed(2));
   }
 
-  updateAmount(event:Event) {
+  updateAmount(event:Event, item: CartItem) {
     let elem = (<HTMLParagraphElement>event.target).parentNode?.childNodes[0].textContent;
     let newQty = +(<HTMLInputElement>event.target).value;
+    item.qty = newQty;
+    console.log('Updated Item >> ', item);
     console.log('event >> ', elem,newQty);
-    this.cartItems.map(e => {
-      if(e.title === elem) {
-        e.qty = newQty;
-      }
-    })
+    // this.cartItems.map(e => {
+    //   if(e.title === elem) {
+    //     e.qty = newQty;
+    //   }
+    // })
+    this._cartservice.updateCart(item);
     this.calculateAmount();
   }
 
@@ -42,6 +46,7 @@ export class CartComponent implements OnInit {
     this.custName = '';
     this.custAddr = '';
     this.custCC = 0;
+    this._cartservice.clearCart();
     this._router.navigateByUrl('/success');
   }
 }

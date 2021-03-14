@@ -23,11 +23,11 @@ export class ProductComponent implements OnInit {
   }
 
   onChange(event: Event) {
-    console.log((<HTMLInputElement>event.target).value);
+    // console.log((<HTMLInputElement>event.target).value);
     this.buyQty = +(<HTMLInputElement>event.target).value;
   }
 
-  addToCart(product: Product) {
+  addToCart(product: Product): void {
     this.prod.title = product.title;
     this.prod.image = product.image;
     this.prod.price = product.price;

@@ -18,15 +18,15 @@ export class CartService {
     }
   }
 
-  getItems() {
+  getItems(): CartItem[] {
     return this.cartItems;
   }
 
-  getBill() {
+  getBill():number {
     return this.cartItems.reduce((a,c) => a + c.price * c.qty,0);
   }
 
-  updateCart(item: CartItem) {
+  updateCart(item: CartItem):CartItem[] {
     if (item.qty === 0) {
       this.cartItems = this.cartItems.filter(e => e.title !== item.title)
     } else {
@@ -37,5 +37,9 @@ export class CartService {
       })
     }
     return this.getItems();
+  }
+
+  clearCart():void {
+    this.cartItems = [];
   }
 }

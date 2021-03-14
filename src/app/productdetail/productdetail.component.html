@@ -1,15 +1,15 @@
 <!-- <p>productdetail works!</p> -->
 <div class="product">
     <div class="product-img">
-        {{product.image}}
+        <img src="{{product.image}}" alt="{{product.title}} image"> 
     </div>
     <div class="product-info">
         <h3>{{product.title}}</h3>
         <h4>{{product.price}}</h4>
         <p>{{product.description}}</p>
-        <select>
+        <select (change)="onChange($event)">
             <option *ngFor="let q of qty" value="{{q}}">{{q}}</option>
         </select>
-        <button type="button" name="prod-btn" id="prod-btn" class="btn btn-primary">Add to Cart</button>
+        <button type="button" name="prod-btn" id="prod-btn" class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
     </div>
 </div>

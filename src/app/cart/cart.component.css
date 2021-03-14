@@ -13,7 +13,6 @@
     grid-template-columns: 10% 10% 55% 10%;
     margin: 1rem 10px;
     padding-bottom: 5px;
-    border-bottom: 2px solid;
 }
 
 .prod-total {
@@ -86,6 +85,10 @@ input {
     margin-bottom: 10px;
 }
 
+.submit[disabled] {
+    background-color: rgba(99, 130, 223, 0.3);
+}
+
 .submit {
     font-size: 1.1rem;
     font-weight: 500;
@@ -93,7 +96,7 @@ input {
     width: 50%;
     padding: 10px 0;
     color: white;
-    background-color: rgba(7, 50, 177, 0.714);
+    background-color: rgba(7, 50, 177, 1);
 }
 
 #bill {

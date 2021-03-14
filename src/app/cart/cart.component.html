@@ -7,7 +7,7 @@
             <div class="prod-card" *ngIf="item.qty > 0">
                 <p id="{{item.title}}">{{item.title}}</p>
                 <p id="price">$ {{item.price}}</p>
-                <input class="qty" type="number" value={{item.qty}} (change)="updateAmount($event)" />
+                <input class="qty" type="number" value={{item.qty}} (change)="updateAmount($event, item)" />
             </div>
         </div>
     </div>

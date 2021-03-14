@@ -30,11 +30,11 @@ export class ProductdetailComponent implements OnInit {
     });
   }
 
-  onChange(event:Event) {
+  onChange(event:Event): void {
     this.buyQty = +(<HTMLInputElement>event.target).value;
   }
 
-  addToCart(prod: Product) {
+  addToCart(prod: Product): void {
     this.cartProduct.title = prod.title;
     this.cartProduct.image = prod.image;
     this.cartProduct.price = prod.price;

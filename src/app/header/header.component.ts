@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
     this.itemCount = this._cartservice.getItems().length;
   }
 
-  ngDoCheck() {
+  ngDoCheck(): void {
     this.itemCount = this._cartservice.getItems().length;
   }
 

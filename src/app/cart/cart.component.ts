@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { Product } from 'src/models/Product';
 import { CartItem } from '../../models/CartItem';
 import { CartService } from '../../services/cart.service';
@@ -14,9 +14,9 @@ export class CartComponent implements OnInit {
   amount: number = 0;
   custName: string = '';
   custAddr: string = '';
-  custCC:number = 0;
+  custCC: number = 0;
 
-  constructor(private _cartservice: CartService, private _router:Router) { }
+  constructor(private _cartservice: CartService, private _router: Router) { }
 
   ngOnInit(): void {
     this.cartItems = this._cartservice.getItems();
@@ -26,17 +26,20 @@ export class CartComponent implements OnInit {
     return +(this.cartItems.reduce((a, c) => a + c.price * c.qty, this.amount).toFixed(2));
   }
 
-  updateAmount(event:Event, item: CartItem) {
+  updateAmount(event: Event, item: CartItem): void {
     let elem = (<HTMLParagraphElement>event.target).parentNode?.childNodes[0].textContent;
     let newQty = +(<HTMLInputElement>event.target).value;
     item.qty = newQty;
+    if(newQty === 0){
+      alert(`Item ${item.title} removed from cart!`);
+    }
     // console.log('Updated Item >> ', item);
     // console.log('event >> ', elem,newQty);
     this._cartservice.updateCart(item);
     this.calculateAmount();
   }
 
-  onSubmit() {
+  onSubmit(): void {
     // alert('Form submitted!');
     this.custName = '';
     this.custAddr = '';

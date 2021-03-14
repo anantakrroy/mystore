@@ -22,7 +22,7 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onChange(event: Event) {
+  onChange(event: Event): void {
     // console.log((<HTMLInputElement>event.target).value);
     this.buyQty = +(<HTMLInputElement>event.target).value;
   }

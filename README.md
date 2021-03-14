@@ -36,6 +36,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 6. *Extra Item -* : Implemented **cart bubble** to show current unique product items added to the cart.
 7. Implemented **sanitised customer form** which is **validated for user inputs** . Appropriate error messages also shown for invalid input entered. 
 
+## Video Demo :
+
+[Demo](https://user-images.githubusercontent.com/20229180/111065684-e84f8b80-84e0-11eb-97dc-06b6c89653c9.mp4)
 
 
 ## Further help

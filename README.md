@@ -31,7 +31,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 3. **Models** folder includes model for Product and CartItem . 
 - Product model matches the one received by the API. 
 - CartItem model represents an item in shopping cart with extra information about purchase quantity.
-4. Routing implemented using Router Module. Also, implemented conditional routing using AuthGuard service.
+4. Routing implemented using Router Module. Also, implemented conditional routing using AuthGuard service to not allow success route to be accessed by manually typing in url if the amount ordered is 0.
 5. Services like cart service used to pass data around sibling components. 
 6. *Extra Item -* : Implemented **cart bubble** to show current unique product items added to the cart.
 7. Implemented **sanitised customer form** which is **validated for user inputs** . Appropriate error messages also shown for invalid input entered. 

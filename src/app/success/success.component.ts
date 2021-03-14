@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CartService} from './../../services/cart.service';
+import { CartService } from './../../services/cart.service';
 
 @Component({
   selector: 'app-success',
@@ -12,5 +12,6 @@ export class SuccessComponent implements OnInit {
 
   ngOnInit(): void {
     this.amount = this._cartservice.getBill();
+    this._cartservice.clearCart();
   }
 }

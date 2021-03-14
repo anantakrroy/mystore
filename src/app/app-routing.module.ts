@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'product-list', component: ProductsComponent },
   { path: 'product-detail/:id', component: ProductdetailComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'success', component: SuccessComponent, canActivate:[AuthGuardService] }
+  { path: 'success', component: SuccessComponent, canActivate:[AuthGuardService]}
 ];
 
 @NgModule({

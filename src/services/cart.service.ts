@@ -23,7 +23,7 @@ export class CartService {
   }
 
   getBill():number {
-    return this.cartItems.reduce((a,c) => a + c.price * c.qty,0);
+    return +this.cartItems.reduce((a,c) => a + c.price * c.qty,0).toFixed(2);
   }
 
   updateCart(item: CartItem):CartItem[] {
@@ -40,6 +40,7 @@ export class CartService {
   }
 
   clearCart():void {
+    // console.log('Cart cleared !');
     this.cartItems = [];
   }
 }

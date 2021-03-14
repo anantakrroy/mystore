@@ -41,7 +41,7 @@ export class CartComponent implements OnInit {
     this.custName = '';
     this.custAddr = '';
     this.custCC = 0;
-    this._cartservice.clearCart();
+    this.calculateAmount();
     this._router.navigateByUrl('/success');
   }
 }

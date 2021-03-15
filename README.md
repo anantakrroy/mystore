@@ -35,6 +35,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 5. Services like cart service used to pass data around sibling components. 
 6. *Extra Item -* : Implemented **cart bubble** to show current unique product items added to the cart.
 7. Implemented **sanitised customer form** which is **validated for user inputs** . Appropriate error messages also shown for invalid input entered. 
+8. Can add items to the cart from product list page or the individual product page. 
+9. User can remove items from the checkout page by changing the quantity to a value less than 1 using the *arrows* in the quantity field. 
 
 ## Video Demo :
 

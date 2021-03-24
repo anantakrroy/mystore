@@ -1,7 +1,7 @@
 <!-- <p>productdetail works!</p> -->
 <div class="product">
     <div class="product-img">
-        <img src="{{product.image}}" alt="{{product.title}} image"> 
+        <img src="{{product.image.replace('https://fakestoreapi.com/', 'https://fakestoreapi.herokuapp.com/')}}" alt="{{product.title}} image"> 
     </div>
     <div class="product-info">
         <h3>{{product.title}}</h3>

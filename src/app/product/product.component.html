@@ -1,6 +1,6 @@
 <div class="product">
     <div class="img-wrapper">
-        <img class="product-img" src="{{product.image}}" alt="{{product.title}} image">
+        <img class="product-img" src="{{product.image.replace('https://fakestoreapi.com/', 'https://fakestoreapi.herokuapp.com/')}}" alt="{{product.title}} image">
     </div>
     <div class="product-info">
         <h4 class="title"><a routerLink="/product-detail/{{product.id}}">{{product.title}}</a></h4>

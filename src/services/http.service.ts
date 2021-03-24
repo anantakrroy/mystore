@@ -13,6 +13,6 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   getProducts() : Observable<Product[]> {
-    return this.http.get<Product[]>('https://fakestoreapi.com/products');
+    return this.http.get<Product[]>('https://fakestoreapi.herokuapp.com/products');
   }
 }
